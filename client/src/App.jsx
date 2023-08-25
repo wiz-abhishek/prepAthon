@@ -1,7 +1,7 @@
 import React, { useDeferredValue } from 'react';
 import { useEffect, useState } from 'react';
-import jwt_decode from "jwt-decode";
 import './App.css';
+import Community from './Pages/Community';
 
 function App() {
   const [user,setUser]=useState({});
@@ -31,7 +31,7 @@ function App() {
   }
   ,[]);
   return (
-    <div className="App">
+    <div className="bg-[#F2F3F7]">
       <div id="signInDiv"></div>
       {Object.keys(user).length!=0 &&
         <button onClick={(e)=>handleSignOut(e)}>Sign Out </button>
@@ -44,6 +44,7 @@ function App() {
           <h3>{user.name}</h3>
         </div>
       }
+      <Community />
     </div>
   )
 }
