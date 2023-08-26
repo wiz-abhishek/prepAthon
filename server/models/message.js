@@ -3,6 +3,8 @@ const Schema = mongoose.Schema;
 const connection = require("../db/connect");
 const User = connection.models.User;
 
+// for storing messages users send each other
+
 const MessageSchema = new Schema({
   senderId: {
     type: mongoose.Schema.Types.ObjectId,
