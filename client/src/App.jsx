@@ -2,10 +2,18 @@ import React, { useDeferredValue } from 'react';
 import { useEffect, useState } from 'react';
 import './App.css';
 import Community from './Pages/Community';
+import jwt_decode from "jwt-decode";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Tripposting from './Pages/Tripposting';
+import Home from './Pages/Home';
+import Tags from './Pages/Tags';
+import Notification from './Pages/Notifications';
+import Location from './Pages/Location';
+import UserProfile from './Pages/UserProfile';
+import Transport from './Pages/Transport';
 
 function App() {
   const [user,setUser]=useState({});
-
 
   function handleCallBackResponse(response){
     console.log("Encoded JWT ID token : " + response.credential);
@@ -44,7 +52,18 @@ function App() {
           <h3>{user.name}</h3>
         </div>
       }
-      <Community />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/tags" element={<Tags />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/notification" element={<Notification />} />
+          <Route path="/location" element={<Location />} />
+          <Route path="/tripposting" element={<Tripposting />} />
+          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/transport" element={<Transport />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
