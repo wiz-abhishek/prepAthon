@@ -11,6 +11,7 @@ import Notification from './Pages/Notifications';
 import Location from './Pages/Location';
 import UserProfile from './Pages/UserProfile';
 import Transport from './Pages/Transport';
+import SingleTrip from './Pages/SingleTripPlanning';
 
 function App() {
   const [user,setUser]=useState({});
@@ -62,6 +63,7 @@ function App() {
           <Route path="/tripposting" element={<Tripposting />} />
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/transport" element={<Transport />} />
+          <Route path="/singleTrip" element={<SingleTrip />} />
         </Routes>
       </BrowserRouter>
     </div>
